@@ -4,7 +4,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Montserrat Alternates", sans-serif;
-  color: #0b666a;
+  color: #00cad3;
   display: flex;
   justify-content: center;
   background-image: url("robot.png");
@@ -20,7 +20,7 @@ body {
 }
 
 .input {
-  border: #0b666a 1px solid;
+  border: #6a878994 0.2px solid;
   height: 300px;
   width: 350px;
   max-width: 500px;
@@ -34,7 +34,7 @@ body {
   text-align: left;
   white-space: normal;
   font-family: "Montserrat Alternates", sans-serif;
-  color: #0b666a;
+  color: #252b48;
   width: 95%;
   border: none;
   outline: none;
