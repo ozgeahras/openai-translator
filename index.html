@@ -14,25 +14,23 @@
   </head>
   <body>
     <div id="app">
-      <h1>OpenAI Translator & Corrector</h1>
-      <div class="input">
-        <div class="choice">
-          <button type="button">Choose Languange</button>
-          <div class="language-menu">
-            <ul class="language-menu-list">
-              <li>English</li>
-              <li>Spanish</li>
-            </ul>
+      <h1>OpenAI Translator & Corrector!</h1>
+      <div class="container">
+        <div class="input">
+          <div class="input-choice">
+            <select name="languages" id="languages">
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+            </select>
           </div>
+          <textarea id="will-translate" class="input-text"></textarea>
         </div>
-        <input type="text" id="will-translate" />
-      </div>
-      <div class="input">
-        <input type="text" id="translated" />
-      </div>
-
-      <div class="card">
-        <button id="counter" type="button"></button>
+        <div class="input">
+          <div class="input-choice">
+            <p>Turkish</p>
+          </div>
+          <textarea id="translated" class="input-text"></textarea>
+        </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

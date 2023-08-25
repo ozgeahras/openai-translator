@@ -1,6 +1,10 @@
 import "./style.css";
-import { setupCounter } from "./counter.js";
 
-//document.querySelector("#app").innerHTML = ``;
+const selectLangBtn = document.getElementById("choose-language");
+selectLangBtn.addEventListener("click", function () {
+  selectLanguage();
+});
 
-setupCounter(document.querySelector("#counter"));
+function selectLanguage() {
+  console.log("test");
+}

@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -11,44 +10,49 @@ body {
   justify-content: center;
 }
 
-.card {
-  padding: 2em;
+.container {
+  display: flex;
 }
 
 .input {
   border: #0b666a 1px solid;
   height: 300px;
   width: 300px;
+  max-width: 500px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-button {
-  border-radius: 8px;
+.input-text {
+  font-size: 14px;
+  padding: 10px 10px; /* Adjust padding values to your preference */
+  text-align: left; /* Align text to the left */
+  padding-bottom: 73%;
+  white-space: normal;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #0b666a;
+  width: 100%;
+}
+
+.input-choice {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+select {
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #252b48;
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  width: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.input select:focus {
+  outline: none;
+  position: relative;
+  z-index: 1; /* Ensure the select box appears above the textarea */
 }
