@@ -4,10 +4,15 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Montserrat Alternates", sans-serif;
-  background-color: #252b48;
   color: #0b666a;
   display: flex;
   justify-content: center;
+  background-image: url("robot.png");
+  background-color: #252b48;
+  background-blend-mode: overlay;
+  background-size: 25rem;
+  background-repeat: repeat-y;
+  background-position: right;
 }
 
 .container {
@@ -17,7 +22,7 @@ body {
 .input {
   border: #0b666a 1px solid;
   height: 300px;
-  width: 300px;
+  width: 350px;
   max-width: 500px;
   overflow: hidden;
   white-space: nowrap;
@@ -25,20 +30,33 @@ body {
 }
 
 .input-text {
-  font-size: 14px;
-  padding: 10px 10px;
+  font-size: 16px;
   text-align: left;
-  padding-bottom: 73%;
   white-space: normal;
   font-family: "Montserrat Alternates", sans-serif;
   color: #0b666a;
-  width: 100%;
+  width: 95%;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 10px 10px 201px 10px;
+  overflow-y: scroll;
+}
+
+.input-text::-webkit-scrollbar {
+  display: none;
+}
+
+.input-text:focus {
+  border: none;
+  outline: none;
 }
 
 .input-choice {
   height: 50px;
   display: flex;
   justify-content: space-around;
+  background-color: #252b48;
 }
 
 select {
@@ -51,8 +69,50 @@ select {
   width: 100%;
 }
 
-.input select:focus {
+select option {
+  font-size: 1.2em;
+}
+
+select:focus {
   outline: none;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .input {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+  .input-text {
+    width: 95%;
+  }
+
+  .input-choice {
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  select {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 312px) {
+  .input-text {
+    width: 75%;
+  }
 }
