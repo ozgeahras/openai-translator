@@ -26,8 +26,8 @@ body {
 
 .input-text {
   font-size: 14px;
-  padding: 10px 10px; /* Adjust padding values to your preference */
-  text-align: left; /* Align text to the left */
+  padding: 10px 10px;
+  text-align: left;
   padding-bottom: 73%;
   white-space: normal;
   font-family: "Montserrat Alternates", sans-serif;
@@ -54,5 +54,5 @@ select {
 .input select:focus {
   outline: none;
   position: relative;
-  z-index: 1; /* Ensure the select box appears above the textarea */
+  z-index: 1;
 }
