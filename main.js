@@ -1,10 +1,13 @@
 import "./style.css";
 
-const selectLangBtn = document.getElementById("choose-language");
-selectLangBtn.addEventListener("click", function () {
-  selectLanguage();
+const selLanguage = document.getElementById("languages");
+const txtWillTranslate = document.getElementById("will-translate");
+const txtTranslated = document.getElementById("translated");
+
+selLanguage.addEventListener("change", () => {
+  selectLanguage(selLanguage.value);
 });
 
-function selectLanguage() {
-  console.log("test");
+function selectLanguage(language) {
+  console.log("selected language: ", language);
 }
