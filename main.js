@@ -11,3 +11,8 @@ selLanguage.addEventListener("change", () => {
 function selectLanguage(language) {
   console.log("selected language: ", language);
 }
+
+const instructionObj = {
+  role: "system",
+  content: "You are a helpful assistant.",
+};
