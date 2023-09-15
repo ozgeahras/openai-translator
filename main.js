@@ -12,7 +12,7 @@ function selectLanguage(language) {
   console.log("selected language: ", language);
 }
 
-txtWillTranslate.addEventListener("keypress", (e) => {
+txtWillTranslate.addEventListener("mouseover", (e) => {
   console.log("this wil be the function");
   e.preventDefault();
   fetchReply();
@@ -31,6 +31,7 @@ async function fetchReply() {
     }
 
     const jsonData = await response.json();
+    console.log(jsonData);
     txtTranslated.innerText = jsonData.reply;
   } catch (error) {
     console.error("An error occurred:", error);
