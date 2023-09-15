@@ -7,10 +7,16 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
+const instructionObj = {
+  role: "system",
+  content: "You are a translator that converts english to turkish",
+};
+
 export async function handler(event) {
   try {
-    const { messages } = JSON.parse(event.body);
-    const conversationArr = [...messages];
+    const { text } = JSON.parse(event.body);
+    const conversationArr = [...text];
+    conversationArr.unshift(instructionObj);
     const response = await openai.createChatCompletion({
       model: "gpt-4",
       messages: conversationArr,
