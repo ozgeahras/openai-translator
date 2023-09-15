@@ -19,12 +19,20 @@ txtWillTranslate.addEventListener("keypress", (e) => {
 });
 
 async function fetchReply() {
-  const response = await fetch("/.netlify/functions/openai", {
-    method: "POST",
-    body: JSON.stringify({ text: txtWillTranslate.value }),
-    headers: { "Content-Type": "application/json" },
-  });
+  try {
+    const response = await fetch("/.netlify/functions/openai", {
+      method: "POST",
+      body: JSON.stringify({ text: txtWillTranslate.value }),
+      headers: { "Content-Type": "application/json" },
+    });
 
-  const { reply } = await response.json();
-  txtTranslated.innerText = reply;
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const jsonData = await response.json();
+    txtTranslated.innerText = jsonData.reply;
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }

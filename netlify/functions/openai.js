@@ -7,24 +7,24 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const instructionObj = {
-  role: "system",
-  content: "You are a translator that converts english to turkish",
-};
-
 export async function handler(event) {
   try {
     const { text } = JSON.parse(event.body);
-    const conversationArr = [...text];
-    conversationArr.unshift(instructionObj);
     const response = await openai.createChatCompletion({
       model: "gpt-4",
-      messages: conversationArr,
+      prompt: `Translate this to turkish.
+      ###
+      outline: ${text}
+      message: 
+      `,
+      max_tokens: 60,
       presence_penalty: 0,
       frequency_penalty: 0.3,
     });
 
+    console.log(response);
     const reply = response.data.choices[0].message.content;
+
     return {
       statusCode: 200,
       body: JSON.stringify({ reply }),
