@@ -12,16 +12,15 @@ function selectLanguage(language) {
   console.log("selected language: ", language);
 }
 
-// txtWillTranslate.addEventListener("mouseover", (e) => {
-//   console.log("this wil be the function");
-//   e.preventDefault();
-//   fetchReply();
-// });
-
-fetchReply("hello");
+txtWillTranslate.addEventListener("mouseover", (e) => {
+  e.preventDefault();
+  const text = txtWillTranslate.value;
+  fetchReply(text);
+});
 
 async function fetchReply(text) {
   try {
+    console.log(txtWillTranslate.value);
     const response = await fetch("/.netlify/functions/openai", {
       method: "POST",
       body: JSON.stringify({ text }),
