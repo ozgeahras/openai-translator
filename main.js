@@ -12,15 +12,15 @@ function selectLanguage(language) {
   console.log("selected language: ", language);
 }
 
-txtWillTranslate.addEventListener("mouseover", (e) => {
+txtWillTranslate.addEventListener("onkeydown", (e) => {
   e.preventDefault();
-  const text = txtWillTranslate.value;
+  const text = txtWillTranslate.textContent;
+  txtTranslated.textContent = "";
   fetchReply(text);
 });
 
 async function fetchReply(text) {
   try {
-    console.log(txtWillTranslate.value);
     const response = await fetch("/.netlify/functions/openai", {
       method: "POST",
       body: JSON.stringify({ text }),
@@ -32,7 +32,6 @@ async function fetchReply(text) {
     }
 
     const jsonData = await response.json();
-    console.log(jsonData);
     txtTranslated.innerText = jsonData.reply;
   } catch (error) {
     console.error("An error occurred:", error);
