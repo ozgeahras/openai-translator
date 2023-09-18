@@ -28,7 +28,6 @@ export async function handler(event) {
 
     const result = response.data.choices[0].text;
     const reply = result.trim().toLowerCase();
-    console.log("reply --> ", reply);
     return {
       statusCode: 200,
       body: JSON.stringify({ reply }),

@@ -14,7 +14,6 @@ function selectLanguage(language) {
 
 txtWillTranslate.addEventListener("input", (e) => {
   const text = e.target.value;
-  console.log("text --> ", text);
   fetchReply(text);
 });
 
