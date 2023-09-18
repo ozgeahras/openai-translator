@@ -11,13 +11,17 @@ export async function handler(event) {
   try {
     const { text } = JSON.parse(event.body);
     const response = await openai.createCompletion({
-      model: "gpt-4",
-      prompt: `Translate this to Turkish: ${text}`,
+      model: "text-davinci-003",
+      prompt: `Translate this to Turkish.
+               ###
+               outline: ${text}
+               message: 
+               `,
       max_tokens: 60,
     });
     console.log("data --> ", response.data);
-    const reply = response.data;
-    //const reply = response.data.choices[0].message.content;
+    //const reply = response.data;
+    const reply = response.data.choices[0].message.content;
     return {
       statusCode: 200,
       body: JSON.stringify({ reply }),
