@@ -17,11 +17,10 @@ export async function handler(event) {
                outline: ${text}
                message: 
                `,
-      max_tokens: 60,
+      max_tokens: 10,
     });
-    console.log("data --> ", response.data);
-    //const reply = response.data;
-    const reply = response.data.choices[0].message.content;
+
+    const reply = response.data.choices[0].text;
     return {
       statusCode: 200,
       body: JSON.stringify({ reply }),
