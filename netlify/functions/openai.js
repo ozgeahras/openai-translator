@@ -13,10 +13,16 @@ export async function handler(event) {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `Translate this to Turkish.
-               ###
-               outline: ${text}
-               message: 
-               `,
+              ###
+              outline: Hello
+              message: merhaba
+              ###
+              outline: How are you
+              message: nasılsın
+              ###
+              outline: ${text}
+              message: 
+              `,
       max_tokens: 10,
     });
 
