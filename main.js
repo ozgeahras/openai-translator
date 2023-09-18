@@ -12,10 +12,9 @@ function selectLanguage(language) {
   console.log("selected language: ", language);
 }
 
-txtWillTranslate.addEventListener("onkeydown", (e) => {
-  e.preventDefault();
-  const text = txtWillTranslate.textContent;
-  txtTranslated.textContent = "";
+txtWillTranslate.addEventListener("input", (e) => {
+  const text = e.target.value;
+  console.log("text --> ", text);
   fetchReply(text);
 });
 
@@ -32,7 +31,7 @@ async function fetchReply(text) {
     }
 
     const jsonData = await response.json();
-    txtTranslated.innerText = jsonData.reply;
+    txtTranslated.textContent = jsonData.reply;
   } catch (error) {
     console.error("An error occurred:", error);
   }

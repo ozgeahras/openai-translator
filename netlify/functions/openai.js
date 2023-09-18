@@ -23,10 +23,12 @@ export async function handler(event) {
               outline: ${text}
               message: 
               `,
-      max_tokens: 10,
+      max_tokens: 200,
     });
 
-    const reply = response.data.choices[0].text;
+    const result = response.data.choices[0].text;
+    const reply = result.trim().toLowerCase();
+    console.log("reply --> ", reply);
     return {
       statusCode: 200,
       body: JSON.stringify({ reply }),
