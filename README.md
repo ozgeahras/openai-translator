@@ -8,7 +8,7 @@
 
 - OpenAIApi
 - openai.createCompletion
-- text-davinci-003
+- gpt-3.5-turbo-instruct
 
 ### Links & Demo
 
