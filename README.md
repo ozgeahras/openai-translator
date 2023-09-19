@@ -19,7 +19,6 @@
 
 - [@ozgeahras](https://github.com/ozgeahras)
 
-
 ## Run Locally
 
 Clone the project
@@ -48,7 +47,7 @@ npm run dev
 
 ## Screenshots
 
-![App Screenshot](https://github.com/ozgeahras/movie-creator-with-OpenAI/blob/master/public/screenshot.png)
+![App Screenshot](https://github.com/ozgeahras/openai-translator/blob/master/public/snapshot.png)
 
 ## About Me
 
