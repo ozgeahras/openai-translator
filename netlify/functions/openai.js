@@ -11,7 +11,7 @@ export async function handler(event) {
   try {
     const { text } = JSON.parse(event.body);
     const response = await openai.createCompletion({
-      model: "text-davinci-003",
+      model: "gpt-3.5-turbo-instruct",
       prompt: `Translate this to Turkish.
               ###
               outline: Hello
